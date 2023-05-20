@@ -1,0 +1,39 @@
+{
+  "author": "Anthony Krivonos <info@anthonykrivonos.com>",
+  "name": "prismagen",
+  "version": "0.0.1",
+  "private": false,
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "dependencies": {
+    "command-line-args": "^5.2.1",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "build": "rm -rf build && tsc",
+    "precommit": "yarn lint && yarn build",
+    "prepare": "yarn precommit",
+    "lint": "tslint -p tsconfig.json --fix",
+    "soft-lint": "tslint -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.0",
+    "@types/node": "^16.7.2",
+    "pre-commit": "^1.2.2",
+    "tslint": "^6.0.0",
+    "tslint-etc": "^1.10.0",
+    "tslint-lines-between-class-members": "^1.3.6"
+  },
+  "pre-commit": [
+    "lint",
+    "build"
+  ],
+  "files": [
+    "build/**/*"
+  ],
+  "license": "MIT",
+  "bin": {
+    "prismagen": "build/index.js"
+  },
+  "preferGlobal": true
+}
