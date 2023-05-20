@@ -16,6 +16,7 @@ const {
     base,
     output,
 } = commandLineArgs(optionDefinitions, { partial: false })
+
 const fullDirPath = path.join(process.cwd(), dir);
 const fullBasePath = path.join(fullDirPath, base);
 const fullOutputPath = path.join(fullDirPath, output);

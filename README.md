@@ -16,7 +16,7 @@ Example directory structure:
 └── base.schema (datasource and generators)
 ```
 
-Resulting `prisma.schema`:
+Resulting `schema.prisma`:
 ```
 datasource db {
     provider = "postgresql"
